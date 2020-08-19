@@ -8,14 +8,15 @@
         navigator
         document.location = "instaprotek://"        
         setTimeout(function() {
+          var ua = window.navigator.userAgent
           var isMobile = {
             android: function() {
-              return /Android/i.test(ua);
+              return /Android/i.test(ua)
             },
             ios: function() {
-              return /iPhone|iPad|iPod/i.test(ua);
+              return /iPhone|iPad|iPod/i.test(ua)
             }
-          }
+          };
           let url = "https://wwww.instaprotek.com"
           if (isMobile.ios() ) {
             url = "https://apps.apple.com/us/app/instaprotek/id1456989327"
