@@ -5,9 +5,24 @@
   <body>
     Hello World
       <script type="text/javascript">
-        document.location = "instaprotek://"
+        navigator
+        document.location = "instaprotek://"        
         setTimeout(function() {
-            document.location = "https://apps.apple.com/us/app/instaprotek/id1456989327"
+          var isMobile = {
+            android: function() {
+              return /Android/i.test(ua);
+            },
+            ios: function() {
+              return /iPhone|iPad|iPod/i.test(ua);
+            }
+          }
+          let url = "https://wwww.instaprotek.com"
+          if (isMobile.ios() ) {
+            url = "https://apps.apple.com/us/app/instaprotek/id1456989327"
+          } else if (isMobile.android()) {
+            url = "https://play.google.com/store/apps/details?id=com.instaprotek.app&hl=en"
+          } 
+          document.location = url
         }, 250)
       </script>
   </body>
